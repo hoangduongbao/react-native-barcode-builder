@@ -18,6 +18,8 @@ export default class Barcode extends PureComponent {
     width: PropTypes.number,
     /* The height of the barcode. */
     height: PropTypes.number,
+    borderRadius: PropTypes.number,
+    paddingTop: PropTypes.number,
     /* Set the color of the bars */
     lineColor: PropTypes.string,
     /* Set the color of the text. */
@@ -37,6 +39,8 @@ export default class Barcode extends PureComponent {
     lineColor: '#000000',
     textColor: '#000000',
     background: '#ffffff00',
+    borderRadius: 20,
+    paddingTop: 10,
     onError: undefined
   };
 
@@ -164,7 +168,9 @@ export default class Barcode extends PureComponent {
   render() {
     this.update();
     const backgroundStyle = {
-      backgroundColor: this.props.background
+      backgroundColor: this.props.background,
+      borderRadius: this.props.borderRadius,
+      paddingTop: this.props.paddingTop,
     };
     return (
       <View style={[styles.svgContainer, backgroundStyle]}>
