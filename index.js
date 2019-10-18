@@ -36,7 +36,7 @@ export default class Barcode extends PureComponent {
     height: 100,
     lineColor: '#000000',
     textColor: '#000000',
-    background: '#ffffff',
+    background: '#ffffff00',
     onError: undefined
   };
 
@@ -48,11 +48,11 @@ export default class Barcode extends PureComponent {
     };
   }
 
-  componentWillUpdate(nextProps) {
-    if (nextProps.value !== this.props.value) {
-      this.update(nextProps);
-    }
-  }
+  // componentWillUpdate(nextProps) {
+  //   if (nextProps.value !== this.props.value) {
+  //     this.update(nextProps);
+  //   }
+  // }
 
   componentDidMount() {
     this.update();
@@ -182,6 +182,6 @@ export default class Barcode extends PureComponent {
 const styles = StyleSheet.create({
   svgContainer: {
     alignItems: 'center',
-    padding: 10
+    padding: 5
   }
 });
